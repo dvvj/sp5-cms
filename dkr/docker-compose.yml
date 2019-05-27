@@ -1,0 +1,18 @@
+version: '2'
+services:
+  mysql:
+    image: "mysql:8.0"
+    restart: always
+    environment:
+     - MYSQL_ROOT_PASSWORD=123
+     - MYSQL_DATABASE=cms
+    ports:
+     - "3306:3306"
+    volumes:
+     - /tmp/mysql/data:/var/lib/mysql
+    command: --max_allowed_packet=32505856
+  cms:
+    image: "jiajidev/cms-dev:0.0.1-SNAPSHOT"
+    restart: always
+    ports:
+     - "8080:8080"

@@ -1,6 +1,6 @@
 FROM openjdk:8-jre
 
-ENTRYPOINT ["/usr/bin/java", "-jar", "/usr/share/mysvc/mysvc.jar"]
+ENTRYPOINT ["java", "-jar", "/usr/share/mysvc/mysvc.jar"]
 
 #ADD target/lib  /usr/share/mysvc/lib
 
